@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Valentine's Day</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+      background: url('https://www.hdwallpapers.in/download/red_white_hearts_in_red_background_hd_valentine-HD.jpg') no-repeat center center;
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 30px;
+    }
+
+    h1 {
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    button {
+      background-color: #e06666;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin: 0 10px;
+      display: inline-block;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #ff0000;
+    }
+  </style>
+</head>
+<body>
+  <img id="valentine-img-1" src="static/lighthouse.jpg" style="width: 40%" alt="ValentineImg">
+  <h1>Will you be my Valentine?</h1>
+  <div class="button-container">
+    <button id="yes" onclick="changeImage()">Yes</button>
+    <button id="no" onclick="noOption()">No</button>
+  </div>
+  <script>
+    function changeImage() {
+      // Change the source of the first image to the URL of the "pictures.html" file
+      document.getElementById("valentine-img-1").src = "static/Dog.jpg";
+      // Add inline style to make the image smaller
+      document.getElementById("valentine-img-1").style.maxWidth = "30%";
+      document.getElementById("valentine-img-1").style.maxHeight = "auto";
+
+      document.querySelector("h1").innerText = "YAY!";
+      // Hide the buttons
+      document.querySelector(".button-container").style.display = "none";
+    }
+
+    function noOption() {
+      document.getElementById("valentine-img-1").src = "static/madCat.jpg";
+      // Add inline style to make the image smaller
+      document.getElementById("valentine-img-1").style.maxWidth = "30%";
+      document.getElementById("valentine-img-1").style.maxHeight = "auto";
+      // Change the text of the h1 element to display a different message
+      document.querySelector("h1").innerText = "That wasn't a real option. Now I'm mad.";
+      // Hide the buttons
+      document.querySelector(".button-container").style.display = "none";
+    }
+  </script>
+</body>
+</html>
